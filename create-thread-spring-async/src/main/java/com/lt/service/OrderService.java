@@ -3,6 +3,7 @@ package com.lt.service;
 import com.lt.manage.OrderManage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -71,15 +72,16 @@ public class OrderService {
 
     /**
      * 使用自定义异步注解实现
+     *
      * @return
      */
-    @GetMapping("/get")
-    public String get(){
+    @GetMapping("/get/{id}")
+    public Integer get(@PathVariable Integer id){
         log.info("<1>");
 
         orderManage.asyncLog2();
         log.info("<3>");
 
-        return "3";
+        return id;
     }
 }
