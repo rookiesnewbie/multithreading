@@ -7,6 +7,15 @@ public class Thread01 extends Thread {
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + "我是子线程");
+
+        try {
+            //让子线程阻塞3秒钟
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(Thread.currentThread().getName() + "子线程执行完毕");
+
     }
 
     public static void main(String[] args) {
@@ -18,6 +27,7 @@ public class Thread01 extends Thread {
 
         new Thread01().start();
 
+        System.out.println("主线程main执行完毕");
         //注意：调用start()线程并不是立即被cpu调度执行，而是由cpu调度执行决定
         // 调用start()方法时 线程处于就状态 ----等待cpu调度
         //
