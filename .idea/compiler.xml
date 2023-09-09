@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="create-thread-anonymity" />
         <module name="create-thread" />
         <module name="create-thread-runnable" />
       </profile>
