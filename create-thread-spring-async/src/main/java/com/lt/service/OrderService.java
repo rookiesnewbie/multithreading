@@ -67,4 +67,19 @@ public class OrderService {
 
         return "3";
     }
+
+
+    /**
+     * 使用自定义异步注解实现
+     * @return
+     */
+    @GetMapping("/get")
+    public String get(){
+        log.info("<1>");
+
+        orderManage.asyncLog2();
+        log.info("<3>");
+
+        return "3";
+    }
 }

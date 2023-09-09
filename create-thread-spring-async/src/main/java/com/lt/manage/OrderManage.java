@@ -19,8 +19,7 @@ public class OrderManage {
     /**
      * 使用异步注解，相当于开启一个新的线程
      */
-//    @Async
-    @LtAsync
+    @Async
     public void asyncLog(){
         try {
             Thread.sleep(3000);
@@ -39,6 +38,23 @@ public class OrderManage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    /**
+     * 使用异步注解，并开启一个新的线程
+     */
+    @LtAsync
+    public void asyncLog2(){
+        try {
+            log.info("目标方法开始执行");
+            Thread.sleep(3000);
+
+            log.info("<2>");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        log.info("目标方法执行结束");
     }
 
 }
