@@ -34,5 +34,7 @@ public class Thread01 extends Thread {
         //调用run()方法时 线程从 就绪 到运行状态
 
         //当run()方法 执行结束 线程就死亡了
+
+//        子线程报错并不影响主线程的执行
     }
 }
