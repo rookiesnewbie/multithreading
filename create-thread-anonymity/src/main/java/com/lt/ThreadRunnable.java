@@ -33,7 +33,4 @@ public class ThreadRunnable{
         System.out.println("主线程执行结束");
     }
 
-
-
-
 }
