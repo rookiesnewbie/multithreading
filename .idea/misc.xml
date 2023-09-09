@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/create-thread/pom.xml" />
         <option value="$PROJECT_DIR$/create-thread-runnable/pom.xml" />
         <option value="$PROJECT_DIR$/create-thread-anonymity/pom.xml" />
+        <option value="$PROJECT_DIR$/create-thread-lambda/pom.xml" />
       </list>
     </option>
   </component>
