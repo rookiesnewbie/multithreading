@@ -11,6 +11,7 @@
         <module name="create-thread" />
         <module name="create-thread-runnable" />
         <module name="create-thread-anonymity" />
+        <module name="create-thread-executor" />
       </profile>
     </annotationProcessing>
   </component>
