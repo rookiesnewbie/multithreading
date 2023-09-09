@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/create-thread-lambda/pom.xml" />
         <option value="$PROJECT_DIR$/create-thread-callable/pom.xml" />
         <option value="$PROJECT_DIR$/create-thread-executor/pom.xml" />
+        <option value="$PROJECT_DIR$/create-thread-spring-async/pom.xml" />
       </list>
     </option>
   </component>
