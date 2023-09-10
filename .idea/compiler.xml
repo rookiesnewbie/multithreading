@@ -9,6 +9,7 @@
         <module name="create-thread" />
         <module name="create-thread-spring-async" />
         <module name="create-thread-anonymity" />
+        <module name="thread-safe" />
         <module name="create-thread-lambda" />
         <module name="create-thread-callable" />
         <module name="create-thread-runnable" />
