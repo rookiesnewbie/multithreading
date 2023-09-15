@@ -22,7 +22,7 @@ public class Main {
             }
         });
 
-        thread.setDaemon(true);
+        thread.setDaemon(true);  //设置thread为守护线程
         thread.start();
 
 
