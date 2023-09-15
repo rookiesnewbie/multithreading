@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="create-thread" />
         <module name="create-thread-spring-async" />
+        <module name="daemon_thread_and_user_thread" />
         <module name="create-thread-anonymity" />
         <module name="thread-safe" />
         <module name="thread-join" />
