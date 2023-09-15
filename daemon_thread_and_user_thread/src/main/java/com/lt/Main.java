@@ -22,6 +22,7 @@ public class Main {
             }
         });
 
+        thread.setDaemon(true);
         thread.start();
 
 
