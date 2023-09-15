@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/create-thread-spring-async/pom.xml" />
         <option value="$PROJECT_DIR$/thread-safe/pom.xml" />
         <option value="$PROJECT_DIR$/thread-join/pom.xml" />
+        <option value="$PROJECT_DIR$/daemon_thread_and_user_thread/pom.xml" />
       </list>
     </option>
   </component>
