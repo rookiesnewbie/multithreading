@@ -5,11 +5,11 @@ public class InterruptThread extends Thread{
     public void run() {
         while (true){
             System.out.println(1);
-            try {
+           /* try {
                 Thread.sleep(100000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
             System.out.println(2);
         }
     }
