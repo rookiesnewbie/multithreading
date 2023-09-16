@@ -1,10 +1,15 @@
 package com.lt;
 
 public class InterruptThread extends Thread{
+
+    private volatile boolean isStart = true;
     @Override
     public void run() {
-        while (true){
+        while (isStart){
             System.out.println(1);
+//            if (this.isInterrupted()){
+//                break;
+//            }
            /* try {
                 Thread.sleep(100000);
             } catch (InterruptedException e) {
@@ -26,6 +31,7 @@ public class InterruptThread extends Thread{
             e.printStackTrace();
         }
 
-        interruptThread.interrupt();
+//        interruptThread.interrupt();
+            interruptThread.isStart = false;
     }
 }
