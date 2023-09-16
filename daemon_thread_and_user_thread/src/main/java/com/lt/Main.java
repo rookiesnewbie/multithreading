@@ -24,10 +24,6 @@ public class Main {
 
         thread.setDaemon(true);  //设置thread为守护线程
         thread.start();
-
-
         System.out.println("主线程执行结束");
-
-
     }
 }
