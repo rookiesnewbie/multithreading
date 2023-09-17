@@ -15,7 +15,6 @@ public class ThreadYield extends Thread{
         ThreadYield threadYield02 = new ThreadYield();
 
         threadYield01.start();
-        threadYield01.yield();
         threadYield02.start();
 
     }
@@ -27,6 +26,7 @@ public class ThreadYield extends Thread{
             if (i == 30){
                 System.out.println(Thread.currentThread().getName()+"主动释放cpu执行权");
                 this.yield();
+
             }
         }
     }
