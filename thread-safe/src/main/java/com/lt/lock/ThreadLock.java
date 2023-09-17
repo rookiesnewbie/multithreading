@@ -17,9 +17,7 @@ public class ThreadLock {
 
         ThreadLock threadLock = new ThreadLock();
         threadLock.print();
-
         threadLock.print2();
-
     }
 
     public void print(){
