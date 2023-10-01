@@ -11,6 +11,7 @@
         <module name="create-thread-anonymity" />
         <module name="thread-safe" />
         <module name="thread-join" />
+        <module name="JUC" />
         <module name="create-thread-lambda" />
         <module name="create-thread-callable" />
         <module name="thread-interrupt" />

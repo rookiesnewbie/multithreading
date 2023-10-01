@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/thread-safe/pom.xml" />
         <option value="$PROJECT_DIR$/thread-join/pom.xml" />
         <option value="$PROJECT_DIR$/daemon_thread_and_user_thread/pom.xml" />
+        <option value="$PROJECT_DIR$/JUC/pom.xml" />
       </list>
     </option>
   </component>
