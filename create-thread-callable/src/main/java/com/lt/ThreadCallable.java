@@ -12,6 +12,7 @@ public class ThreadCallable implements Callable<Integer> {
 
         new Thread(task).start();
         Integer result = task.get();
+        System.out.println(Thread.currentThread().getName());
 
 
         System.out.println("子线程返回的数据："+ result);

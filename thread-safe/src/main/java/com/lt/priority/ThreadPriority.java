@@ -6,7 +6,7 @@ package com.lt.priority;
  * Version 1.0
  * @Description 线程优先级
  */
-public class ThreadPriority {
+public class ThreadPriority extends Object{
 
 
     public static void main(String[] args) {
