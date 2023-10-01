@@ -4,6 +4,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.locks.LockSupport;
 
 /**
  * @Author LiTeng
@@ -15,6 +16,8 @@ public class MyFutureTask<V> implements Runnable {
 
     private Object lock = new Object();
     private MyCallable<V> myCallable;
+
+    private Thread currThread;
 
     private V result;
     public MyFutureTask(MyCallable<V> myCallable) {
@@ -28,19 +31,26 @@ public class MyFutureTask<V> implements Runnable {
         result = myCallable.call();
 
         //子线程执行结束唤起主线程获取结果
-        synchronized (lock){
-            lock.notify();
+        if (currThread != null){
+            LockSupport.unpark(currThread);
+
         }
+//        synchronized (lock){
+//            lock.notify();
+//        }
 
     }
 
     public V get() throws InterruptedException {
         //获取子线程异步执行结束后的结果
 
-        synchronized (lock){
-            //让主线程阻塞
-            lock.wait();
-        }
+//        synchronized (lock){
+//            //让主线程阻塞
+//            lock.wait();
+//        }
+
+        currThread = Thread.currentThread();
+        LockSupport.park();
         return result;
     }
 }
