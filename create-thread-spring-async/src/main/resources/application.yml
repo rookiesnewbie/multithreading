@@ -1,5 +1,20 @@
 server:
   port: 8080
 
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    password: ddufwspfbwyldheg  #SMTP的密码，并不是自己的登录密码，具体获取下面给出（这里以QQ邮箱为例）
+    port: 587
+    properties:
+      mail:
+        debug: true
+    protocol: smtp
+    smtp:
+      socketFactory: javax.net.ssl.SSLSocketFactory
+    username: 2049448867@qq.com   #自己的电子邮箱
+
+
 log:
   folder: d:/log/AopLog
