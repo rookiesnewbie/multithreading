@@ -70,7 +70,7 @@ public class MyExecutors {
 
 
     public static void main(String[] args) {
-        MyExecutors myExecutors = new MyExecutors(2, 20);
+        MyExecutors myExecutors = new MyExecutors(5, 2);
         for (int i = 0; i < 10; i++) {
             final int num = i;
             myExecutors.execute(new Runnable() {
@@ -83,7 +83,7 @@ public class MyExecutors {
             });
         }
 
-        myExecutors.isRun = false;
+//        myExecutors.isRun = false;
 
 
     }
