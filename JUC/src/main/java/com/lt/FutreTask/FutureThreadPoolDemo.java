@@ -1,4 +1,4 @@
-package com.lt.CompletableFuture;
+package com.lt.FutreTask;
 
 import java.util.HashMap;
 import java.util.Map;
