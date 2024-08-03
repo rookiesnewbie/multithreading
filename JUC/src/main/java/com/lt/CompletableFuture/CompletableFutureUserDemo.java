@@ -13,6 +13,7 @@ public class CompletableFutureUserDemo {
 
 
     public static void m1(){
+        //自定义线程池记得关闭
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
        try {
