@@ -1,5 +1,8 @@
 package com.lt.locks;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class ReEntryLockDemo {
 
     public synchronized void m1(){
@@ -22,7 +25,8 @@ public class ReEntryLockDemo {
     public static void main(String[] args) {
 
         //ReEntryLockDemo.m11();
-        ReEntryLockDemo.m22();
+        //ReEntryLockDemo.m22();
+        ReEntryLockDemo.m33();
 
 
     }
@@ -67,4 +71,35 @@ public class ReEntryLockDemo {
             reEntryLockDemo.m1();
         },"t1").start();
     }
+
+
+    /**
+     * 隐式锁
+     */
+    public static void m33(){
+        final Lock lock = new ReentrantLock();
+        new Thread(() ->{
+            try {
+                lock.lock();
+                System.out.println(Thread.currentThread().getName() +"\t 外层调用");
+                try {
+                    lock.lock();
+                    System.out.println(Thread.currentThread().getName() +"\t 中层调用");
+
+                    try {
+                        lock.lock();
+                        System.out.println(Thread.currentThread().getName() +"\t 内层调用");
+                    }finally {
+                        lock.unlock();
+                    }
+                }finally {
+                    lock.unlock();
+                }
+            }finally {
+               lock.unlock();
+            }
+
+        },"t1").start();
+    }
+
 }
