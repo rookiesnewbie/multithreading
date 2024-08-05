@@ -27,6 +27,9 @@ public class ReEntryLockDemo {
 
     }
 
+    /**
+     * 同步块
+     */
     public static void m11(){
         final Object object = new Object();
         new Thread(() ->{
@@ -55,6 +58,9 @@ public class ReEntryLockDemo {
 
     }
 
+    /**
+     * 同步方法
+     */
     public static void m22(){
         ReEntryLockDemo reEntryLockDemo = new ReEntryLockDemo();
         new Thread(() ->{
