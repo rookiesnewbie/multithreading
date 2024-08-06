@@ -9,7 +9,8 @@ public class InterruptDemo {
     static AtomicBoolean  atomicBoolean = new AtomicBoolean(false);
     public static void main(String[] args){
         //InterruptDemo.m1_volatile();
-        InterruptDemo.m2_atomicBoolean();
+        //InterruptDemo.m2_atomicBoolean();
+        InterruptDemo.m3_api();
 
     }
 
@@ -61,6 +62,36 @@ public class InterruptDemo {
 
         new Thread(() ->{
             atomicBoolean.set(true);  //停止线程
+        },"t2").start();
+    }
+
+
+    /**
+     * 通过API 中断运行中的线程
+     */
+    public static void m3_api(){
+        Thread t1 = new Thread(() -> {
+            while (true) {
+                if (Thread.currentThread().isInterrupted()) {
+                    System.out.println(Thread.currentThread().isInterrupted() + "\t isInterrupted被修改为true，程序停止");
+                    break;
+                }
+                System.out.println("--------------  hello isInterrupted api");
+            }
+        }, "t1");
+        t1.start();
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        //t1.interrupt();  //t1自己终止自己
+
+        //t2向t1发出势商，将t1的中断标志位设为true希望t1停下来
+        new Thread(() ->{
+            t1.interrupt();  //停止线程
         },"t2").start();
     }
 }
