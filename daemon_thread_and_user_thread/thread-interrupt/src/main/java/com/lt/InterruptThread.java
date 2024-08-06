@@ -1,5 +1,7 @@
 package com.lt;
 
+import java.util.concurrent.TimeUnit;
+
 public class InterruptThread extends Thread{
 
     private volatile boolean isStart = true;
@@ -10,11 +12,12 @@ public class InterruptThread extends Thread{
 //            if (this.isInterrupted()){
 //                break;
 //            }
-           /* try {
-                Thread.sleep(100000);
+            try {
+                TimeUnit.SECONDS.sleep(10000);
             } catch (InterruptedException e) {
+                //Thread.currentThread().interrupt();
                 e.printStackTrace();
-            }*/
+            }
             System.out.println(2);
         }
     }
@@ -31,7 +34,7 @@ public class InterruptThread extends Thread{
             e.printStackTrace();
         }
 
-//        interruptThread.interrupt();
-            interruptThread.isStart = false;
+        interruptThread.interrupt();
+        interruptThread.isStart = false;
     }
 }
