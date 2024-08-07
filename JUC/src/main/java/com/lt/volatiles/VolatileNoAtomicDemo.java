@@ -3,6 +3,10 @@ package com.lt.volatiles;
 import java.util.concurrent.TimeUnit;
 
 class myNumber{
+
+    /**
+     * 保证原子性的情况
+     */
     //int number;
     //public synchronized void addNumber(){
     //    number++;
